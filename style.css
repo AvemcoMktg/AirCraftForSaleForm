@@ -83,3 +83,42 @@ button:hover {
     flex-direction: column;
   }
 }
+
+button:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.form-error {
+  margin: 16px 0 0;
+  color: #b00020;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.thank-you-card {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.thank-you-logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 28px;
+}
+
+.thank-you-heading {
+  margin: 0 0 18px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.thank-you-body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
