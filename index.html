@@ -14,7 +14,7 @@
     <h2>Get an Aircraft Insurance Quote!</h2>
     <p class="sub">It takes less than 60 seconds</p>
 
-    <form action="https://formspree.io/f/xwvyqleg" method="POST">
+    <form id="avemco-quote-form" action="https://formspree.io/f/xwvyqleg" method="POST">
 
       <!-- Optional Formspree settings -->
       <input type="hidden" name="_subject" value="New AVEMCO Quote Request">
@@ -51,12 +51,52 @@
         <input type="number" name="value_requested" placeholder="Value Requested">
       </div>
 
-      <button type="submit">Get My Quote</button>
+      <button id="submit-button" type="submit">Get My Quote</button>
 
     </form>
 
+    <p id="form-error" class="form-error" style="display: none;">
+      There was a problem submitting your information. Please try again.
+    </p>
+
   </div>
 </div>
+
+<script>
+  const form = document.getElementById("avemco-quote-form");
+  const submitButton = document.getElementById("submit-button");
+  const formError = document.getElementById("form-error");
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    formError.style.display = "none";
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = "thank-you.html";
+      } else {
+        formError.style.display = "block";
+        submitButton.disabled = false;
+        submitButton.textContent = "Get My Quote";
+      }
+    } catch (error) {
+      formError.style.display = "block";
+      submitButton.disabled = false;
+      submitButton.textContent = "Get My Quote";
+    }
+  });
+</script>
 
 </body>
 </html>
