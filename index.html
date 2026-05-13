@@ -14,6 +14,8 @@
     <h2>Get an Aircraft Insurance Quote!</h2>
     <p class="sub">It takes less than 60 seconds</p>
 
+    <p class="required-note"><span>*</span> Required fields</p>
+
     <form id="avemco-quote-form" action="https://formspree.io/f/xwvyqleg" method="POST">
 
       <!-- Optional Formspree settings -->
@@ -25,30 +27,61 @@
 
       <!-- Name -->
       <div class="row">
-        <input type="text" name="first_name" placeholder="First Name" required>
-        <input type="text" name="last_name" placeholder="Last Name" required>
+        <div class="field-group">
+          <label for="first-name">First Name <span class="required">*</span></label>
+          <input id="first-name" type="text" name="first_name" placeholder="First Name" required>
+        </div>
+
+        <div class="field-group">
+          <label for="last-name">Last Name <span class="required">*</span></label>
+          <input id="last-name" type="text" name="last_name" placeholder="Last Name" required>
+        </div>
       </div>
 
       <!-- Contact -->
       <div class="row">
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email Address" required>
+        <div class="field-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input id="phone" type="tel" name="phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input id="email" type="email" name="email" placeholder="Email Address" required>
+        </div>
       </div>
 
       <!-- Aircraft -->
       <div class="row">
-        <input type="text" name="base_airport" placeholder="Base Airport (Identifier)">
-        <input type="number" name="aircraft_year" placeholder="Aircraft Year">
+        <div class="field-group">
+          <label for="base-airport">Base Airport</label>
+          <input id="base-airport" type="text" name="base_airport" placeholder="Base Airport (Identifier)">
+        </div>
+
+        <div class="field-group">
+          <label for="aircraft-year">Aircraft Year</label>
+          <input id="aircraft-year" type="number" name="aircraft_year" placeholder="Aircraft Year">
+        </div>
       </div>
 
       <div class="row">
-        <input type="text" name="aircraft_make" placeholder="Aircraft Make">
-        <input type="text" name="aircraft_model" placeholder="Aircraft Model">
+        <div class="field-group">
+          <label for="aircraft-make">Aircraft Make</label>
+          <input id="aircraft-make" type="text" name="aircraft_make" placeholder="Aircraft Make">
+        </div>
+
+        <div class="field-group">
+          <label for="aircraft-model">Aircraft Model</label>
+          <input id="aircraft-model" type="text" name="aircraft_model" placeholder="Aircraft Model">
+        </div>
       </div>
 
       <!-- Value -->
       <div class="row">
-        <input type="number" name="value_requested" placeholder="Value Requested">
+        <div class="field-group full-width">
+          <label for="value-requested">Value Requested</label>
+          <input id="value-requested" type="number" name="value_requested" placeholder="Value Requested">
+        </div>
       </div>
 
       <button id="submit-button" type="submit">Get My Quote</button>
