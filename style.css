@@ -140,6 +140,14 @@ button:disabled {
   margin: 0 auto 28px;
 }
 
+.form-logo {
+  display: block;
+  width: 225px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 5px;
+}
+
 .thank-you-heading {
   margin: 0 0 18px;
   font-size: 28px;
